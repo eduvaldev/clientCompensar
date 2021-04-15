@@ -1,0 +1,14 @@
+version: "2"
+services:
+  nginx-react:
+    container_name: ngixreactapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 8080:80
+    environment:
+      #REACT_APP_API_URL: https://compensar.scriptf.com
+      REACT_APP_API_URL: http://localhost:3000
+      REACT_APP_API_URL_TESTING: https://compensar-adulto-mayor.herokuapp.com
+      REACT_APP_API_URL_PRODUCTION: https://netgou.herokuapp.com  

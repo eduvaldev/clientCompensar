@@ -1,0 +1,186 @@
+.progreso{
+  width: 90%;
+  margin: 60px auto 100px auto;
+}
+
+.progreso .progreso__logo{
+  width: 200px;
+}
+
+.progreso .progreso__subtitle{
+  color: #85B300;
+  text-align: center;
+  margin: 15px 0 20px 0;
+}
+
+.progreso__botones{
+  display: grid;
+  grid-template-rows: 80px 80px 80px 80px;
+  grid-row-gap: 20px;
+}
+
+.progreso__boton{
+  background-color: #E86330;
+  height: 100%;
+  outline: none;
+  color: #e7e7e7;
+  border:none;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.progreso .progreso__navigate{
+  display: flex;
+  align-items: center;
+}
+
+.progreso .progreso__paginacion{
+  margin-left: 20px;
+}
+.progreso .progreso__paginacion li{
+  margin-left: 10px;
+}
+
+.progreso .progreso__paginacion .Mui-selected{
+  color: white;
+  background-color: #E86330;
+  font-weight: 700;
+}
+
+.progreso .progreso__paginacion li button{
+  width: 54px;
+  height: 54px;
+  font-size: 1.8rem;
+}
+
+.progreso .progreso__paginacion li button svg{
+  font-size: 2.5rem;
+}
+
+
+
+.card{
+  width: 100%;
+  padding: 30px 25px 30px 25px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  border: 1px solid #F4F8EA;
+  -webkit-box-shadow: 0px 3px 5px 0px #85B300;
+  -moz-box-shadow: 0px 3px 5px 0px #85B300;
+  box-shadow: 0px 3px 5px 0px #85B300;
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-template-rows: 100%;
+  grid-gap: 100px;
+  overflow: hidden;
+}
+
+.card .card__left{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card .card__respuesta{
+  margin-top: 20px;
+}
+
+.card .card__texto{
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-gap: 40px;
+}
+
+.card .card__resaltado{
+  color: #E86330;
+  margin-bottom: 20px;
+}
+
+.card .card__right{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card .card__textInfo{
+  margin-bottom: 20px;
+}
+
+.card .card__img{
+  height: 250px;
+  margin: auto;
+}
+
+.card .card__resaltado--progreso{
+  margin-top: 20px;
+}
+
+.grafica{
+  width: 200px;
+  height: 200px;
+}
+
+.menuInf{
+  display: flex;
+}
+
+.menuInf .menuInf__boton{
+  margin-right: 20px;
+  width: auto;
+  height: auto;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #E86330;
+}
+
+.menuInf a:last-child button{
+  margin-right: 0;
+}
+
+.porcentaje{
+  position: relative;
+}
+
+.porcentaje .porcentaje__svg{
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.porcentaje .porcentaje__circle{
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 35px;
+}
+.porcentaje .porcentaje__circle:nth-child(1){
+  stroke: #D7D7D8;
+}
+
+.porcentaje .porcentaje__circle:nth-child(2){
+  stroke-dasharray: 471px;
+}
+
+.porcentaje .porcentaje__numero{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 700;
+}
+.porcentaje .porcentaje__numero span{
+  color: #878A8C !important;
+}

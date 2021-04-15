@@ -1,0 +1,19 @@
+.ProfileOptions{
+    display: flex;
+    width: 100%;
+}
+.ProfileOptions p{
+    width: 50%;
+    height: 45px;
+    text-align: left;
+
+}
+.ProfileOptions button{
+    height: 45px;
+    margin: 0px;
+    margin-right: 10px;
+    max-width: 500px;
+    width: 70%;
+    background-color: #E86330;
+    color: white;
+}

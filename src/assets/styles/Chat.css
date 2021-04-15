@@ -1,0 +1,91 @@
+
+.chat {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border-top: #e86330 7px solid;
+    border-bottom: rgba(229, 229, 229, 0.93) 7px solid;
+    box-shadow: 1px 1px 5px rgb(143, 142, 142);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 25px;
+}
+
+#invisible{
+    display: none;
+}
+
+.chat-avatar {
+    display: flex;
+    align-items: center;
+    bottom: 25px;
+    margin-bottom: 25px;
+
+}
+
+.chat img {
+    width: 80px;
+    height: 75px;
+    background-color: transparent;
+}
+
+.chat-avatar h1 {
+    margin-left: 20px;
+}
+
+.textDown{
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+.textDown.textDown--active{
+  transition: 0.5s ease;
+  height: auto;
+}
+.textDown .textDown__boton{
+  display: flex;
+  height: auto;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+.textDown i{
+  margin-left: 10px;
+  transition: 0.3s ease-in;
+  /* transform: rotate(180deg); */
+}
+.textDown .icon-circle-down--active{
+  transform: rotate(180deg);
+}
+.textDown .textDown__text{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.8s ease-in;
+}
+.textDown .textDown__text--active{
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 750px) {
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+}
+
+@media screen and (max-width: 350px) {
+
+}
+

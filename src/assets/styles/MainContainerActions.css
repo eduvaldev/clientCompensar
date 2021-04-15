@@ -1,0 +1,51 @@
+.main-container__actions{
+    display: flex;
+    width: 70%;
+}
+.main-container__actions button {
+    background-color: #E86330;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    width: auto;
+    padding: 0px 20px;
+    margin: 0px 5px;
+    color: whitesmoke;
+}
+.repeat-stop-btn{
+    width: 490px;
+}
+.icon-play{
+    height: 50%;
+    overflow: hidden;
+}
+.icon-play img{
+    height: 40%;
+    object-fit: fill;
+}
+
+
+@media screen and (max-width:1024px){
+    .main-container__actions button{
+        font-size: 1.5rem;
+        padding: 0px 10px;
+    }
+}
+@media screen and (max-width:425px){
+    .main-container__actions{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: 350px;
+    }
+    .main-container__actions button{
+        width: 70vw;
+        margin: 10px 0px;
+        padding: 0px 0px;
+        line-height: 45px;
+    }
+    .icon-play{
+        padding: 0px;
+        margin: 0px;
+    }
+}

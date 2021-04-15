@@ -1,0 +1,14 @@
+{
+    "congratsAlert":{
+        "title":"¡Felicitaciones!",
+        "paragraph":"Haces parte del reto. En el botón registrar actividad puedes registrar tus ejercicios diarios hasta que finalicen las dos semanas."
+    },
+    "disabledAlert":{
+        "title":"¡Función inhabilitada!",
+        "paragraph":"Próximamente estara disponible para tí"
+    },
+    "alternative":{
+        "title":" ",
+        "paragraph": "Antes de iniciar tu experiencia te pedimos completar tu perfil para facilitar procesos en la plataforma, recuerda que si necesitas ayuda puedes completar los formularios junto a tu familia EJEMPLO"
+    }
+}

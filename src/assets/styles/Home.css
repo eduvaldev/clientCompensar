@@ -1,0 +1,49 @@
+
+
+.home-container__list-item button {
+    background-color: #E86330;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: whitesmoke;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/*ipad */
+
+
+@media screen and (max-width: 750px) {
+
+    .home-container__list-item {
+        width: 100%;
+    }
+
+    .home-container__list-item button {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .home-container__content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .home-container__list ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .home-container__list ul li {
+        display: flex;
+    }
+}

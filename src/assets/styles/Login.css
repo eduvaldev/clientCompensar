@@ -1,0 +1,130 @@
+.login-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 3rem;
+    padding: 9% 35%;
+    text-align: center;
+    height: 100%;
+    color: #303030;
+}
+.login-container img{
+    width: 200px;
+    margin-bottom:20px;
+}
+.__title{
+    max-width: 300px;
+    width: 100vw;
+    font-weight: 500px;
+    font-size: 3.5rem;
+}
+.login-container__input{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100vw;
+    margin-top:20px;
+}
+
+.identification_type{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 50px;
+    width: 80%;
+    margin: 20px 0px;
+    border-radius: 5px;
+    border:solid 1px #9D9D9D;
+}
+.identification_type:hover{
+    border:solid 1px #E86330;
+}
+.identification_type select{
+    position: relative;
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+}
+.identification_type select:hover{
+    cursor: pointer;
+}
+.identification_type select:focus{
+    outline: unset;
+}
+.identification_type select::-ms-expand {
+    display: none;
+}
+.identification_type img{
+    z-index: 1;
+    height: 20px;
+    width: 30px;
+    margin: 0px 49px 0px -20px;
+}
+
+.login-container__input input{
+    height: 50px;
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    border:solid 1px #9D9D9D;
+}
+.login-container__input input:hover{
+    border:solid 1px #E86330;
+}
+.login-container__input input:focus{
+    outline:2px #E86330;
+}
+.login-container__input label{
+    font-size: 2rem;
+}
+
+
+.login-container__button {
+    max-width: 80%;
+    max-height: 50px;
+    height: 70px;
+    width: 100vw;
+    font-weight: 700;
+    margin: 20px 0px;
+    background-color: #00D27B;
+    color: #ecebeb;
+}
+.login-container__button:hover{
+    cursor: pointer;
+}
+.error-message {
+    color: #cc0033;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0 10px 0;
+    font-size: 2rem;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 750px) {
+
+    .login-container img {
+        width: 100%;
+    }
+    .identification_type img{
+        height: 11px;
+        width: 20px;
+    }
+}

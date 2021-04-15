@@ -1,0 +1,44 @@
+.Profile__container{
+    display: flex;
+    height: 900px;
+}
+.__Information{
+    width: 50%;
+    height: 100%;
+    margin-right: 20px;
+    padding: 0px;
+}
+.__Options{
+    display: flex;
+    flex-direction: column;
+}
+.__Options h1{
+    width: 100%;
+}
+.__SectionImage{
+    overflow: hidden;
+    max-height: 400px;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.__SectionImage img{
+    width: 100%;
+    object-fit: fill;
+}
+.home-container__list h1{
+    margin-bottom: 10px;
+}
+.home-container__list-item p{
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width:425px){
+    .Profile__container{
+        flex-direction: column;
+    }
+    .__Information{
+        width: 100%;
+        margin: 0px;
+    }
+}

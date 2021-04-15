@@ -1,0 +1,86 @@
+
+.bienestar-container__actions{
+    grid-column: l1/l2;
+}
+.bienestar-container__actions ul{
+    padding: 10px 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bienestar-container__list ul{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bienestar-container__list-item img:hover{
+    cursor: pointer;
+}
+.bienestar-container__list-itemHealt{
+    border-radius: 20px;
+    width: 100%;
+    height: 275px;
+    margin: 10px 5px;
+    color:white;
+    text-align: center;
+    font-size: 4rem;
+    background-image: url(../images/selfCare.png);
+    background-size: cover;
+}
+
+.bienestar-container__list-itemHealt h1{
+    color:white;
+}
+
+.bienestar-container__list-itemServices h1{
+    color:white;
+}
+
+.bienestar-container__list-itemServices{
+    width: 100%;
+    height: 275px;
+    margin: 10px 5px;
+    color:whitesmoke;
+    font-size: 4rem;
+    text-align: center;
+    background-image: url(../images/telephone.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    
+}
+@media screen and (max-width:1000px){
+
+    .bienestar-container__list-item img{
+        padding: 0;
+        border:solid 1px grey;
+        border-radius: 5px;
+        color: whitesmoke;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:750px){
+
+    .bienestar-container__list-itemHealt{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .bienestar-container__list-itemServices{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:600px){
+    .bienestar-container__list-itemHealt{
+        margin-bottom: 10px;
+    }
+    .bienestar-container__list-itemServices{
+        margin-bottom: 10px;
+    }
+
+}
