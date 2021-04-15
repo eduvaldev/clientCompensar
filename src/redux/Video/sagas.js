@@ -17,7 +17,7 @@ import {
   videoZoomError,
 } from './actions';
 
-const url = 'http://3.86.211.240:3000';
+const url = 'http://3.95.19.121:3000';
 //const url = 'http://localhost:3000';
 // const url = process.env.REACT_APP_API_URL;
 //const url = 'https://compensar.scriptf.com';

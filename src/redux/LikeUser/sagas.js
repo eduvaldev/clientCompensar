@@ -2,7 +2,7 @@ import { all, call, put, takeEvery } from 'redux-saga/effects';
 import { likeUserError, likeUserSuccess } from './actions';
 import { LIKE_USER_REQUESTING } from './constants';
 
-const url = 'http://3.86.211.240:3000';
+const url = 'http://3.95.19.121:3000';
 //const url = 'http://localhost:3000';
 // const url = process.env.REACT_APP_API_URL;
 //const url = 'https://compensar.scriptf.com';
