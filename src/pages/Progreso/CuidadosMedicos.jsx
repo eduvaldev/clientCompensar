@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Pagination from '@material-ui/lab/Pagination';
 import Layout from '../../components/Layout';
 import logo from '../../assets/images/compensar_logo.png';
@@ -12,6 +13,7 @@ import ProgressBar from '../../components/subcomponents/ProgressRadio';
 import MainControlerActions from '../../components/MainControlerActions';
 
 const CuidadosMedicos = () => {
+  const { PreguntasCm } = useSelector((state) => state.preguntas);
   const [pagina, setPagina] = useState(1);
   const handleChange = (event, value) => {
     console.log(value);
@@ -28,33 +30,39 @@ const CuidadosMedicos = () => {
             <>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Sabes que es el Índice de Masa Corporal?</p>
+                  <p className="card__textInfo">{PreguntasCm[0].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">No</p>
+                      <p className="card__parrafo">{PreguntasCm[0].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasCm[0].progreso} />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="card__right">
                   <p className="card__resaltado">Recuerda:</p>
-                  <p className="card__textInfo">El Indice de Masa Corporal  (IMC) es un número que se calcula con base en el peso y la estatura de la persona y que se utiliza como  herramienta para la detección de posibles problemas de salud de los adultos y evaluar situación nutricional.</p>
+                  <p className="card__textInfo">{PreguntasCm[0].pregunta_id.textoHelp}</p>
                   <img src={healt} alt="" className="card__img" />
                 </div>
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Tengo registro de mis datos de oxigenanción, tensión arterial o glucometria?</p>
+                  <p className="card__textInfo">{PreguntasCm[1].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Si</p>
+                      <p className="card__parrafo">{PreguntasCm[1].respuesta}</p>
+                    </div>
+                    <div className="card__texto">
+                      <p className="card__resaltado card__resaltado--progreso">Progreso</p>
+                      <div className="grafica">
+                        <ProgressBar completed={PreguntasCm[1].progreso} />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -64,11 +72,11 @@ const CuidadosMedicos = () => {
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Has cosumido todos tus medicamentos en horarios estipulados y recomendados por el personal medico?</p>
+                  <p className="card__textInfo">{PreguntasCm[2].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">No Siempre</p>
+                      <p className="card__parrafo">{PreguntasCm[2].respuesta}</p>
                     </div>
                   </div>
                 </div>
@@ -82,11 +90,11 @@ const CuidadosMedicos = () => {
             <>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Mi plan de vacunación se encuentra al dia? </p>
+                  <p className="card__textInfo">{PreguntasCm[3].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Si</p>
+                      <p className="card__parrafo">{PreguntasCm[3].respuesta}</p>
                     </div>
                   </div>
                 </div>
@@ -96,11 +104,11 @@ const CuidadosMedicos = () => {
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Mis proximas citas de control medico de los programas de promoción de la salud y la prevención de enfermedades son…</p>
+                  <p className="card__textInfo">{PreguntasCm[4].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Cada 30 dias</p>
+                      <p className="card__parrafo">{PreguntasCm[4].respuesta}</p>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import audio from '../../assets/audios/14-ruta-autocuidado-mental.mp3';
 import audio2 from '../../assets/audios/18-ruta-autocuidado-registrar-actividad-mental.mp3';
 import logo from '../../assets/images/compensar_logo.png';
@@ -9,6 +10,7 @@ import Footer from '../../components/Footer';
 import Form from '../../components/FormPop';
 import Header from '../../components/Header';
 import MainContainerActions from '../../components/MainContainerActions';
+import { emailSendUser } from '../../redux/Retos/actions';
 
 const Mental = (props) => {
   const [open, setOpen] = useState(false);
@@ -16,6 +18,20 @@ const Mental = (props) => {
   const [visible, setVisible] = useState('corp-container__like');
   const [registerAct, setRegisterAct] = useState('noButton');
   const [openAlert, setOpenAlert] = useState(false);
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('@compensar:user');
+  const { mayorSabio } = useSelector((state) => state.retos);
+
+  useEffect(() => {
+    if (mayorSabio.state === 'true') {
+      setVisible('noButton');
+      setRegisterAct('corp-container__dislike');
+    } else {
+      setVisible('corp-container__like');
+      setRegisterAct('noButton');
+    }
+  }, []);
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -31,6 +47,7 @@ const Mental = (props) => {
     setRegisterAct('corp-container__dislike');
   };
   const handleOpenAlert = () => {
+    dispatch(emailSendUser(token));
     setOpenAlert(true);
   };
   return (

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import AudioProfile from '../assets/audios/20-mi-perfil.mp3';
 import logo from '../assets/images/compensar_logo.png';
 import '../assets/styles/Profile.css';
@@ -6,8 +7,14 @@ import Chat from '../components/Chat';
 import Layout from '../components/Layout';
 import MainContainerActions from '../components/MainContainerActions';
 import ProfileOptions from '../components/subcomponents/ProfileOptions';
+import { userNotificacionesGet } from '../redux/Notificaciones/actions';
 
 function Profile() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('@compensar:user');
+  useEffect(() => {
+    dispatch(userNotificacionesGet(token));
+  }, [token]);
   return (
     <Layout>
       <section className="main-container">

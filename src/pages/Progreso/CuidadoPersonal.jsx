@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Pagination from '@material-ui/lab/Pagination';
 import Layout from '../../components/Layout';
 import logo from '../../assets/images/compensar_logo.png';
@@ -10,6 +11,7 @@ import ProgressBar from '../../components/subcomponents/ProgressRadio';
 import MainControlerActions from '../../components/MainControlerActions';
 
 const CuidadoPersonal = () => {
+  const { PreguntasCp } = useSelector((state) => state.preguntas);
   return (
     <Layout>
       <section className="progreso">
@@ -19,38 +21,38 @@ const CuidadoPersonal = () => {
         <div className="progreso__cards">
           <div className="card">
             <div className="card__left">
-              <p className="card__textInfo">¿Numero de veces y tiempo que utilizó para mi limpieza dental diariamente?-</p>
+              <p className="card__textInfo">{PreguntasCp[0].pregunta_id.pregunta}</p>
               <div className="card__respuesta">
                 <div className="card__texto">
                   <p className="card__resaltado">Respuesta</p>
-                  <p className="card__parrafo">3 veces</p>
+                  <p className="card__parrafo">{PreguntasCp[0].respuesta}</p>
                 </div>
                 <div className="card__texto">
                   <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                   <div className="grafica">
-                    <ProgressBar completed="100" />
+                    <ProgressBar completed={PreguntasCp[0].progreso} />
                   </div>
                 </div>
               </div>
             </div>
             <div className="card__right">
               <p className="card__resaltado">Recuerda:</p>
-              <p className="card__textInfo">3 veces al dia limpieza dental.</p>
+              <p className="card__textInfo">{PreguntasCp[1].pregunta_id.textoHelp}</p>
               <img src={dental} alt="" className="card__img" />
             </div>
           </div>
           <div className="card">
             <div className="card__left">
-              <p className="card__textInfo">¿Cuándo realizas actividades laborales o en el hogar tomas las medidas necesarias para evitar algun tipo de accidente o lesión física?</p>
+              <p className="card__textInfo">{PreguntasCp[1].pregunta_id.pregunta}</p>
               <div className="card__respuesta">
                 <div className="card__texto">
                   <p className="card__resaltado">Respuesta</p>
-                  <p className="card__parrafo">No Siempre</p>
+                  <p className="card__parrafo">{PreguntasCp[1].respuesta}</p>
                 </div>
                 <div className="card__texto">
                   <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                   <div className="grafica">
-                    <ProgressBar completed="100" />
+                    <ProgressBar completed={PreguntasCp[1].progreso} />
                   </div>
                 </div>
               </div>
@@ -61,16 +63,16 @@ const CuidadoPersonal = () => {
           </div>
           <div className="card">
             <div className="card__left">
-              <p className="card__textInfo">¿Prevengo accidentes en el hogar evitando conductas inapropiadas?</p>
+              <p className="card__textInfo">{PreguntasCp[2].pregunta_id.pregunta}</p>
               <div className="card__respuesta">
                 <div className="card__texto">
                   <p className="card__resaltado">Respuesta</p>
-                  <p className="card__parrafo">Siempre</p>
+                  <p className="card__parrafo">{PreguntasCp[2].respuesta}</p>
                 </div>
                 <div className="card__texto">
                   <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                   <div className="grafica">
-                    <ProgressBar completed="100" />
+                    <ProgressBar completed={PreguntasCp[2].progreso} />
                   </div>
                 </div>
               </div>

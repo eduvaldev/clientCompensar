@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import logo from '../assets/images/compensar_logo.png';
@@ -7,10 +8,15 @@ import '../assets/styles/Home.css';
 import Chat from '../components/Chat';
 import MainContainerActions from '../components/MainContainerActions';
 import '../assets/styles/Progreso.css';
-//
-//import IconProfile from '../assets/icons/Icon-profile.png';
+import { preguntasUserRequesting } from '../redux/Preguntas/actions';
 
 const Progress = () => {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('@compensar:user');
+
+  useEffect(() => {
+    dispatch(preguntasUserRequesting(token));
+  }, [token]);
   return (
     <Layout>
       <section className="main-container">

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import audio from '../assets/audios/12-ruta-autocuidado.mp3';
 import Cuidadologo from '../assets/images/salud.service-medic.png';
@@ -7,8 +8,14 @@ import Chat from '../components/Chat';
 import Layout from '../components/Layout';
 import Logo from '../components/Logo';
 import MainContainerActions from '../components/MainContainerActions';
+import { userRetos } from '../redux/Retos/actions';
 
 const Cuidado = (props) => {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('@compensar:user');
+  useEffect(() => {
+    dispatch(userRetos(token));
+  }, [token]);
   return (
     <Layout>
       <audio id="media" src={audio} autoPlay={false} />

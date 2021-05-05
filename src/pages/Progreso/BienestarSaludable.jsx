@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Pagination from '@material-ui/lab/Pagination';
 import Layout from '../../components/Layout';
 import logo from '../../assets/images/compensar_logo.png';
@@ -15,6 +16,7 @@ import ProgressBar from '../../components/subcomponents/ProgressRadio';
 import MainControlerActions from '../../components/MainControlerActions';
 
 const BienestarSaludable = () => {
+  const { PreguntasBs } = useSelector((state) => state.preguntas);
   const [pagina, setPagina] = useState(1);
   const handleChange = (event, value) => {
     console.log(value);
@@ -31,60 +33,60 @@ const BienestarSaludable = () => {
             <>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Cuántos minutos al dia te has tomado para estar tranquilo meditando y sin pensar en nada?</p>
+                  <p className="card__textInfo">{PreguntasBs[0].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">20 Minutos</p>
+                      <p className="card__parrafo">{PreguntasBs[0].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[0].progreso} />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="card__right">
                   <p className="card__resaltado">Recuerda:</p>
-                  <p className="card__textInfo">60 minuots al dia es el tiempo minimo para una rutina de meditación y relajación.</p>
+                  <p className="card__textInfo">{PreguntasBs[0].pregunta_id.textoHelp}</p>
                   <img src={sit} alt="" className="card__img" />
                 </div>
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Cuántas paginas al dia has leido?</p>
+                  <p className="card__textInfo">{PreguntasBs[1].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">20 Paginas</p>
+                      <p className="card__parrafo">{PreguntasBs[1].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[1].progreso} />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="card__right">
                   <p className="card__resaltado">Recuerda:</p>
-                  <p className="card__textInfo">10 paginas leidas al dia.</p>
+                  <p className="card__textInfo">{PreguntasBs[1].pregunta_id.textoHelp}</p>
                   <img src={learn} alt="" className="card__img" />
                 </div>
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Has aprendido algo nuevo en tu vida que desees compartirme?</p>
+                  <p className="card__textInfo">{PreguntasBs[2].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">No siempre</p>
+                      <p className="card__parrafo">{PreguntasBs[2].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[2].progreso} />
                       </div>
                     </div>
                   </div>
@@ -99,38 +101,38 @@ const BienestarSaludable = () => {
             <>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Cuántos minutos al dia estoy compartirndo con mis familiares que me generan alegria y felicidad?</p>
+                  <p className="card__textInfo">{PreguntasBs[3].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">60 Minutos</p>
+                      <p className="card__parrafo">{PreguntasBs[3].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[3].progreso} />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="card__right">
                   <p className="card__resaltado">Recuerda:</p>
-                  <p className="card__textInfo">Minimo 60 minutos ideal 180 minutos.</p>
+                  <p className="card__textInfo">{PreguntasBs[3].pregunta_id.textoHelp}</p>
                   <img src={family} alt="" className="card__img" />
                 </div>
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Has compartido tus experiencias o conocimientos con alguna persona?</p>
+                  <p className="card__textInfo">{PreguntasBs[4].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Si</p>
+                      <p className="card__parrafo">{PreguntasBs[4].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[4].progreso} />
                       </div>
                     </div>
                   </div>
@@ -141,16 +143,16 @@ const BienestarSaludable = () => {
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿ Has participado de actividades de libre esparcimiento como juegos de mesa o concierto de foma individual o grupal?</p>
+                  <p className="card__textInfo">{PreguntasBs[5].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Si</p>
+                      <p className="card__parrafo">{PreguntasBs[5].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[5].progreso} />
                       </div>
                     </div>
                   </div>
@@ -165,16 +167,16 @@ const BienestarSaludable = () => {
             <>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Cuento con personas de confianza con la cual puedo compartir mis emociones y expresar mis sentimientos cuando lo necesite hacer?</p>
+                  <p className="card__textInfo">{PreguntasBs[6].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Siempre</p>
+                      <p className="card__parrafo">{PreguntasBs[6].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[6].progreso} />
                       </div>
                     </div>
                   </div>
@@ -185,16 +187,16 @@ const BienestarSaludable = () => {
               </div>
               <div className="card">
                 <div className="card__left">
-                  <p className="card__textInfo">¿Has realizado caminatas en ambientes naturales como parte de tu rutina diaria para mejoar tu salud física y mental?</p>
+                  <p className="card__textInfo">{PreguntasBs[7].pregunta_id.pregunta}</p>
                   <div className="card__respuesta">
                     <div className="card__texto">
                       <p className="card__resaltado">Respuesta</p>
-                      <p className="card__parrafo">Si</p>
+                      <p className="card__parrafo">{PreguntasBs[7].respuesta}</p>
                     </div>
                     <div className="card__texto">
                       <p className="card__resaltado card__resaltado--progreso">Progreso</p>
                       <div className="grafica">
-                        <ProgressBar completed="100" />
+                        <ProgressBar completed={PreguntasBs[7].progreso} />
                       </div>
                     </div>
                   </div>
