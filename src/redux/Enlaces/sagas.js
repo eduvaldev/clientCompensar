@@ -10,8 +10,8 @@ import {
   enlaceTypeFormError,
 } from './actions';
 
-//const url = 'https://adulto-mayor-api.innovacioncompensar.click';
-const url = 'http://localhost:3000';
+const url = 'https://adulto-mayor-api.innovacioncompensar.click';
+//const url = 'http://localhost:3000';
 // const url = process.env.REACT_APP_API_URL;
 //const url = 'https://compensar.scriptf.com';
 const enlacesLink = `${url}/api/enlaces/part?type=link`;
