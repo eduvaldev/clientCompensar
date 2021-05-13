@@ -20,7 +20,6 @@ const reducer = (state = initialState, action) => {
         error: '',
       };
     case USER_NOTIFICACIONES_GET_SUCCESS: {
-      console.log(action.notificaciones);
       let basico ;
       let riesgo ;
       action.notificaciones.notfGeneral.map((not) => {

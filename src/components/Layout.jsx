@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { loginSuccess } from '../redux/Auth/actions';
 import Footer from './Footer';
 import Header from './Header';
-import { userNotificacionesGet } from '../redux/Notificaciones/actions';
+//import { userNotificacionesGet } from '../redux/Notificaciones/actions';
 
 function Layout({ children, removeHeader }) {
   const history = useHistory();
@@ -16,7 +16,7 @@ function Layout({ children, removeHeader }) {
     const userId = localStorage.getItem('@compensar:identification');
     if (token) {
       dispatch(loginSuccess({ token, userId }));
-      dispatch(userNotificacionesGet(token));
+      //dispatch(userNotificacionesGet(token));
     }
   }, []);
   useEffect(() => {

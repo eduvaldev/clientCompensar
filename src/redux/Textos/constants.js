@@ -1,0 +1,2 @@
+export const GET_TEXTOS_ALL = 'GET_TEXTOS_ALL';
+export const SUCCES_TEXTOS_ALL = 'SUCCES_TEXTOS_ALL';

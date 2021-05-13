@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AudioProfile from '../assets/audios/20-mi-perfil.mp3';
 import logo from '../assets/images/compensar_logo.png';
 import '../assets/styles/Profile.css';
@@ -8,12 +8,16 @@ import Layout from '../components/Layout';
 import MainContainerActions from '../components/MainContainerActions';
 import ProfileOptions from '../components/subcomponents/ProfileOptions';
 import { userNotificacionesGet } from '../redux/Notificaciones/actions';
+import { textosAppRequesting } from '../redux/Textos/actions';
 
 function Profile() {
   const dispatch = useDispatch();
   const token = localStorage.getItem('@compensar:user');
+  const { textos } = useSelector((state) => state.textos);
+  console.log(textos);
   useEffect(() => {
     dispatch(userNotificacionesGet(token));
+    dispatch(textosAppRequesting(token));
   }, [token]);
   return (
     <Layout>
@@ -25,19 +29,16 @@ function Profile() {
         </div>
 
         <div className="main-container__content">
-
-          <Chat
-            display=""
-            text1={(
-              <p>
-                Antes de iniciar tu experiencia te pedimos
-                completar tu perfil para facilitar procesos
-                en la plataforma, recuerda que si necesitas
-                ayuda puedes completar los formularios junto
-                a tu familia.
-              </p>
-            )}
-          />
+          { textos.length > 0 ? (
+            <Chat
+              display=""
+              text1={(
+                <p>
+                  {textos[1].texto}
+                </p>
+              )}
+            />
+          ) : null}
 
           <div className="home-container__list">
             <ul>

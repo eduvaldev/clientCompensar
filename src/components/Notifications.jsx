@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { userNotificacionesGet } from '../redux/Notificaciones/actions';
+import { useSelector } from 'react-redux';
+//import { userNotificacionesGet } from '../redux/Notificaciones/actions';
 import '../assets/styles/Notifications.css';
 import NotificationsOptions from './subcomponents/NotificationsOptions';
 
 const Notifications = () => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const { notBasico, notRiesgo, notReto } = useSelector((state) => state.notificaciones);
   const [open, setOpen] = useState(false);
   const [number, setNumber] = useState(0);
@@ -20,7 +20,7 @@ const Notifications = () => {
     }
   };
   useEffect(() => {
-    dispatch(userNotificacionesGet(token));
+    //dispatch(userNotificacionesGet(token));
     funcNumber();
   }, [token]);
   return (
@@ -29,7 +29,7 @@ const Notifications = () => {
         <i className="icon-bell" />
       </div>
       <div className="notifications__alerta">
-        <p className="notifications__numero">{number}</p>
+        <p className="notifications__numero">{2}</p>
       </div>
       <ul className={open ? ('notifications__conten notifications__conten--active') : ('notifications__conten')}>
         <p className="notifications__title">Notificaciones</p>

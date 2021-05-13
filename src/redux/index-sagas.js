@@ -5,6 +5,8 @@ import likeUserSagas from './LikeUser/sagas';
 import preguntasUser from './Preguntas/sagas';
 import retoUser from './Retos/sagas';
 import notUser from './Notificaciones/sagas';
+import textos from './Textos/sagas';
+import enlaces from './Enlaces/sagas';
 
 function * IndexSagas() {
   yield all([
@@ -14,6 +16,8 @@ function * IndexSagas() {
     fork(preguntasUser),
     fork(retoUser),
     fork(notUser),
+    fork(textos),
+    fork(enlaces),
   ]);
 }
 

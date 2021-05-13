@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import audioHome from '../assets/audios/1-menu-principal.mp3';
 import logo from '../assets/images/compensar_logo.png';
@@ -8,12 +8,15 @@ import Alert from '../components/Alert';
 import Chat from '../components/Chat';
 import Layout from '../components/Layout';
 import MainContainerActions from '../components/MainContainerActions';
+import { textosAppRequesting } from '../redux/Textos/actions';
 import { videoWhatsAppRequesting, videoZoomRequesting } from '../redux/Video/actions';
+import { enlaceLinkRequesting } from '../redux/Enlaces/actions';
 
 const Home = () => {
   const dispatch = useDispatch();
   const [openAlert, setOpenAlert] = useState(false);
   const token = localStorage.getItem('@compensar:user');
+  const { textos } = useSelector((state) => state.textos);
   const handleOpenAlert = () => setOpenAlert(true);
   const handleCloseAlert = () => {
     setOpenAlert(false);
@@ -22,6 +25,12 @@ const Home = () => {
   useEffect(() => {
     dispatch(videoWhatsAppRequesting(token));
     dispatch(videoZoomRequesting(token));
+    dispatch(textosAppRequesting(token));
+  }, [token]);
+
+  useEffect(() => {
+    dispatch(enlaceLinkRequesting(token));
+    //dispatch(enlaceTypeFormRequesting(token));
   }, [token]);
 
   return (
@@ -34,34 +43,16 @@ const Home = () => {
         </div>
 
         <div className="main-container__content">
-
-          <Chat
-            display=""
-            text1={(
-              <p>
-                Hola, soy Anita, tu guía personal.
-                Fui creada para explicarte cómo funciona cada experiencia, así que no debes preocuparte.
-                <br />
-                {' '}
-                <br />
-
-                ¿Qué es Mayor Compensar? Mayor compensar es una plataforma pensada para ti, donde encontrarás
-                todos los servicios agrupados de la persona mayor,
-                como: Nivelación Digital, Bienestar Integral, Mi Reto Saludable, Red de Cuidadores, Plan de Bienestar Integral Calle 26 - CUR,
-                Modelo de Productividad y Aliados y Convenios.
-                Estos contenidos son claros y fáciles de entender. Haz clic sobre uno de los servicios y
-                empecemos la experiencia.
-                {' '}
-                <br />
-                {' '}
-                <br />
-
-                Si tienes alguna duda haz clic en el botón de preguntas.
-                Para escuchar esta información haz clic en el botón reproducir.
-              </p>
-            )}
-          />
-
+          { textos.length > 0 ? (
+            <Chat
+              display=""
+              text1={(
+                <p>
+                  {textos[0].texto}
+                </p>
+              )}
+            />
+          ) : null}
           <div className="home-container__list">
             <ul>
               <li className="home-container__list-item">
